@@ -4,6 +4,7 @@
             <ul class="nav">
                 <li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
                 <li><a href="#"><i class="lnr lnr-code"></i> <span>Proses</span></a></li>
+                <li><a href="{{url('training')}}"><i class="lnr lnr-database"></i> <span>Training Data</span></a></li>
                 <!-- <li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
                 <li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
                 <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
