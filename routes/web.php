@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/training', 'DataTrainingController@index');
+Route::post('/training/import-csv', 'DataTrainingController@import_csv')->name('importCSV');
