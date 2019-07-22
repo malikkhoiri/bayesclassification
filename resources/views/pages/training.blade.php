@@ -4,7 +4,6 @@
     <div class="main">
         <div class="main-content">
             <div class="container-fluid">
-
                 <div class="panel panel-headline">
                     <div class="panel-heading">
                         <h3 class="panel-title">Training Data</h3>
@@ -32,11 +31,6 @@
                                 <button type="button" class="btn btn-primary mr-5" data-toggle="modal" data-target="#importCSV">
                                     IMPORT CSV
                                 </button>
-                                @if (session('filename'))
-                                    <div class="alert alert-success">
-                                        {{ session('filename') }}
-                                    </div>
-                                @endif
 
                                 {{--Modals #importCSV--}}
                                 <div class="modal fade" id="importCSV" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -90,7 +84,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

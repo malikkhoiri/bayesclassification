@@ -20,7 +20,7 @@ class DataTrainingController extends Controller
     public function index()
     {
         $data = DataTraining::all();
-        return view('pages.trainings.training', ['data' => $data]);
+        return view('pages.training', ['data' => $data]);
     }
 
     /**
