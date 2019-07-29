@@ -13,6 +13,7 @@
                             <div class="col-md-12">
                                 <form action="{{url('/process/testing')}}">
                                     <div class="input-group">
+                                        <label class="sr-only" for="testing"></label>
                                         <input type="text" id="testing" name="testing" class="form-control" placeholder="Input disini" required minlength="3">
                                         <span class="input-group-btn">
                                             <button type="submit" class="btn btn-primary">Test</button>

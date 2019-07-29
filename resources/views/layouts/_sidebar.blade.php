@@ -3,6 +3,8 @@
         <nav>
             <ul class="nav">
                 <li><a href="#" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="{{url('/transfer-data')}}"><i class="lnr lnr-book"></i> <span>Data Pemindahan</span></a></li>
+                <li><a href="{{url('/print-data')}}"><i class="lnr lnr-printer"></i> <span> Cetak Data Pemindahan</span></a></li>
                 <li><a href="{{url('/process')}}"><i class="lnr lnr-code"></i> <span>Proses</span></a></li>
                 <li><a href="{{url('/training')}}"><i class="lnr lnr-database"></i> <span>Training Data</span></a></li>
                 <!-- <li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
