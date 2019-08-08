@@ -5,8 +5,11 @@
                 <li><a href="#" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
                 <li><a href="{{url('/transfer-data')}}"><i class="lnr lnr-book"></i> <span>Data Pemindahan</span></a></li>
                 <li><a href="{{url('/print-data')}}"><i class="lnr lnr-printer"></i> <span> Cetak Data Pemindahan</span></a></li>
+                @if(auth()->user()->role == 1)
                 <li><a href="{{url('/process')}}"><i class="lnr lnr-code"></i> <span>Proses</span></a></li>
                 <li><a href="{{url('/training')}}"><i class="lnr lnr-database"></i> <span>Training Data</span></a></li>
+                <li><a href="{{route('user.index')}}" class="" id="user"><i class="lnr lnr-users"></i> <span>User</span></a></li>
+                @endif
                 <!-- <li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
                 <li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
                 <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
