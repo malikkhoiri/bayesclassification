@@ -50,6 +50,21 @@
 	<script src="{{asset('assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js')}}"></script>
 	<script src="{{asset('assets/vendor/chartist/js/chartist.min.js')}}"></script>
 	<script src="{{asset('assets/scripts/klorofil-common.js')}}"></script>
+    <script type="text/javascript">
+        $('body').on('click', 'nav ul li a' , function () {
+            $(this).closest('nav ul').find('a.active').removeClass('active');
+            localStorage.setItem('lastActiveId', $(this).attr('id'));
+        });
+
+        $(function () {
+            //check if defined
+            if(!!localStorage.getItem('lastActiveId'))
+            {
+                $('#'.concat(localStorage.getItem('lastActiveId'))).addClass('active');
+                localStorage.removeItem('lastActiveId');
+            }
+        });
+    </script>
     @yield('script')
 </body>
 </html>

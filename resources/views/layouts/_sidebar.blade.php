@@ -2,12 +2,12 @@
     <div class="sidebar-scroll">
         <nav>
             <ul class="nav">
-                <li><a href="#" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                <li><a href="{{url('/transfer-data')}}"><i class="lnr lnr-book"></i> <span>Data Pemindahan</span></a></li>
-                <li><a href="{{url('/print-data')}}"><i class="lnr lnr-printer"></i> <span> Cetak Data Pemindahan</span></a></li>
+                <li><a href="#" class="" id="dashboard"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="{{url('/transfer-data')}}" class="" id="data"><i class="lnr lnr-book"></i> <span>Data Pemindahan</span></a></li>
+                <li><a href="{{url('/print-data')}}" class="" id="print"><i class="lnr lnr-printer"></i> <span> Cetak Data Pemindahan</span></a></li>
                 @if(auth()->user()->role == 1)
-                <li><a href="{{url('/process')}}"><i class="lnr lnr-code"></i> <span>Proses</span></a></li>
-                <li><a href="{{url('/training')}}"><i class="lnr lnr-database"></i> <span>Training Data</span></a></li>
+                <li><a href="{{url('/process')}}" class="" id="process"><i class="lnr lnr-code"></i> <span>Proses</span></a></li>
+                <li><a href="{{url('/training')}}" class="" id="training"><i class="lnr lnr-database"></i> <span>Training Data</span></a></li>
                 <li><a href="{{route('user.index')}}" class="" id="user"><i class="lnr lnr-users"></i> <span>User</span></a></li>
                 @endif
                 <!-- <li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
