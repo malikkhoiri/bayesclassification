@@ -2,7 +2,7 @@
     <div class="sidebar-scroll">
         <nav>
             <ul class="nav">
-                <li><a href="#" class="" id="dashboard"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="/home" class="" id="dashboard"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
                 <li><a href="{{url('/transfer-data')}}" class="" id="data"><i class="lnr lnr-book"></i> <span>Data Pemindahan</span></a></li>
                 <li><a href="{{url('/transfer-data/add')}}" class="" id="in_data"><i class="lnr lnr-book"></i> <span>Input Data Pemindahan</span></a></li>
                 <li><a href="{{url('/print-data')}}" class="" id="print"><i class="lnr lnr-printer"></i> <span>Cetak Data Pemindahan</span></a></li>
