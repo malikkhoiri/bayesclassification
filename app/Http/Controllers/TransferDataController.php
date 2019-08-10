@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Tools\NaiveBayesClassifier;
 use App\TransferData;
+use Dompdf\FontMetrics;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class TransferDataController extends Controller
 {
@@ -146,10 +147,34 @@ class TransferDataController extends Controller
         $year = $request->input('year');
         $key = $request->input('class');
 
-        $data = DB::table('transfer_data')->where(DB::raw('EXTRACT(YEAR FROM date_receive)'), $year)
-            ->where('classification', $this->class[$key])->get();
+        $data = (DB::table('transfer_data')->where(DB::raw('EXTRACT(YEAR FROM date_receive)'), $year)
+            ->where('classification', $this->class[$key])->orderBy('date_receive')->get())->all();
 
-        return redirect('/print-data');
+        return redirect('/print-data')->with('data', $data);
+    }
+
+    public function exportPdf(Request $request){
+        $data = $request->input('data');
+
+        $total = 0;
+
+        foreach ($data as $d){
+            $total += $d["doc_qty"];
+        }
+
+        $pdf = PDF::loadView('pdf.transfer_data', ['data' => $data, 'total' => $total]);
+        $pdf->output();
+        $dom_pdf = $pdf->getDomPDF();
+
+        $canvas = $dom_pdf ->get_canvas();
+
+        $font = new FontMetrics($canvas, $dom_pdf->getOPtions());
+
+        $canvas->page_text($canvas->get_width()/2-35, $canvas->get_height()-35, "Page {PAGE_NUM} of {PAGE_COUNT}", $font->getFont('helvetica', 'normal'), 10, array(0, 0, 0));
+
+        $filename = "DP_".$data[0]["classification"]."_".date("Y", strtotime($data[0]["date_receive"])).".pdf";
+
+        return $pdf->stream($filename);
     }
 
 }
