@@ -15,7 +15,6 @@
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
 	<link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/favicon.png')}}">
 </head>
 
@@ -33,11 +32,11 @@
 							<form class="form-auth-small" method="POST" action="{{ route('login') }}">
                                 @csrf
 								<div class="form-group @error('email') has-error @enderror">
-									<label for="signin-email" class="control-label sr-only">Email</label>
+									<label for="email" class="control-label sr-only">Email</label>
                                     <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
 								</div>
 								<div class="form-group @error('password') has-error @enderror">
-									<label for="signin-password" class="control-label sr-only">Password</label>
+									<label for="password" class="control-label sr-only">Password</label>
                                     <input type="password" class="form-control" id="password" name="password" required autocomplete="current-password" placeholder="Password">
 								</div>
 								<button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>

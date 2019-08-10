@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="brand">
-        <a href="#"><img src="{{asset('assets/img/logo-dark.png')}}" alt="Klorofil Logo" class="img-responsive logo"></a>
+        <a href="#"><img src="{{asset('assets/img/logo.png')}}" alt="Klorofil Logo" class="img-responsive logo"></a>
     </div>
     <div class="container-fluid">
         <div class="navbar-btn">
