@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+
     Route::get('/transfer-data', 'TransferDataController@index');
     Route::get('/transfer-data/add', 'TransferDataController@create');
     Route::post('/transfer-data/save', 'TransferDataController@store')->name('save');
@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/print-data', 'TransferDataController@preview');
     Route::post('/print-data', 'TransferDataController@print')->name('print');
+    Route::get('/print-data/pdf', 'TransferDataController@exportPdf')->name('export.pdf');
 
     Route::get('/process', 'ProcessController@index');
     Route::get('/process/testing', 'ProcessController@testing');
